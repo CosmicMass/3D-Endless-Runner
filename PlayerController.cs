@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float forwardSpeed;
     public float maxSpeed;
 
+
     private int desiredLane = 1; //0: left 1: middle 2:right
     public float laneDistance = 4; // the distance between two lan
 
@@ -23,11 +24,22 @@ public class PlayerController : MonoBehaviour
     private bool IsSliding = false;
     private float originalSpeed;
     private float speedMultiplier = 1f;
+    private bool IsRunningL = false;
+    private bool IsRunningR = false;
+
+    //private bool IsBumped = false;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
         originalSpeed = forwardSpeed;
         speedMultiplier = originalSpeed / forwardSpeed;
+        GameStateManager.Instance.OnGameStateChanged += OnGameStateChanged; //Pause Time
+    }
+
+    private void OnDestroy()
+    {
+        GameStateManager.Instance.OnGameStateChanged -= OnGameStateChanged;
     }
     void Update()
     {
@@ -50,17 +62,23 @@ public class PlayerController : MonoBehaviour
             {
                 Jump();
             }
+            if (SwipeManager.swipeDown && !IsSliding)
+            {
+                StartCoroutine(Slide());
+            }
         }
 
         else
         {
-            direction.y += Gravity * Time.fixedDeltaTime;
+            direction.y += Gravity * Time.deltaTime;
+            if (SwipeManager.swipeDown && !IsSliding)
+            {
+                StartCoroutine(Slide());
+                direction.y = -8;
+            }
         }
 
-        if (SwipeManager.swipeDown && !IsSliding )
-        {
-            StartCoroutine(Slide());
-        }
+        
 
         //Gather the inputs on which lane we should be
         if (SwipeManager.swipeRight)
@@ -68,12 +86,16 @@ public class PlayerController : MonoBehaviour
             desiredLane++;
             if (desiredLane == 3)
                 desiredLane = 2;
+            animator.SetBool("IsRunningR", true);
+
         }
         if (SwipeManager.swipeLeft)
         {
             desiredLane--;
             if (desiredLane == -1)
                 desiredLane = 0;
+            animator.SetBool("IsRunningL", true);
+
         }
 
         //Calculate where we should be in the future
@@ -95,7 +117,7 @@ public class PlayerController : MonoBehaviour
         if (transform.position != targetPosition)
         {
             Vector3 diff = targetPosition - transform.position;
-            Vector3 moveDir = diff.normalized * 25 * Time.deltaTime;
+            Vector3 moveDir = 25 * Time.deltaTime * diff.normalized;
 
             if (moveDir.sqrMagnitude < diff.magnitude)
                 controller.Move(moveDir);
@@ -109,7 +131,6 @@ public class PlayerController : MonoBehaviour
         controller.Move(direction * Time.deltaTime);
     }
 
-   
 
     private void Jump()
     {
@@ -121,22 +142,29 @@ public class PlayerController : MonoBehaviour
         if (hit.transform.CompareTag("Obstacle"))
         {
             PlayerManager.gameOver = true;
-            
+            FindObjectOfType<AudioManager>().PlaySound("GameOver");
         }
     }
 
     private IEnumerator Slide()
     {
         IsSliding = true;
-        animator.SetBool("IsSliding", true);
         controller.center = new Vector3(0, 1.5f, 0);
         controller.height = 2.88f;
+        animator.SetBool("IsSliding", true);
+
 
         yield return new WaitForSeconds(1.1f * speedMultiplier);
 
+        IsSliding = false;
         controller.center = new Vector3(0, 2.2f, 0);
         controller.height = 4.4f;
         animator.SetBool("IsSliding", false);
-        IsSliding = false;
+        
+    }
+
+    private void OnGameStateChanged(GameState newGameState)
+    {
+        enabled = newGameState == GameState.Gameplay;
     }
 }
