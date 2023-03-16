@@ -1,0 +1,219 @@
+fileFormatVersion: 2
+guid: c0d80183563a2f44e98b85626d95fc85
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable:
+  - first:
+      74: 5742240090136566399
+    second: Armature|ani_01iDLE
+  - first:
+      74: 2320482690234936700
+    second: Armature|ani_01WALK
+  - first:
+      74: 1772104474354444996
+    second: Armature|ani_02RUn
+  - first:
+      74: 7521889649696809744
+    second: Armature|ani_02WALK
+  - first:
+      74: 6751558142379426982
+    second: Armature|ani_03JuMO_Down
+  - first:
+      74: 2930881049230351472
+    second: Armature|ani_03JuMP
+  - first:
+      74: 201620795127339931
+    second: Armature|ani_03JuMP_up
+  - first:
+      74: -3745750295763645448
+    second: Armature|ani_04Slide
+  - first:
+      74: 6025428806585712680
+    second: Armature|ani_06_StepByStep
+  - first:
+      74: 8661564619265812234
+    second: Armature|ani_07_Bump
+  - first:
+      74: 2992882657116520317
+    second: Armature|ani_JumP_fly
+  - first:
+      74: -2790612309196418947
+    second: 'Armature|ani_LEFTLean '
+  - first:
+      74: 8500230115276369832
+    second: 'Armature|ani_RightLean '
+  - first:
+      74: -6145549678238842744
+    second: Armature|ani_Rise_
+  - first:
+      74: -1144899411639262903
+    second: Armature|Hand_L_3
+  - first:
+      74: 5906290976772455016
+    second: Armature|Hand_L_4
+  - first:
+      74: 1853922706897592900
+    second: Armature|Hand_L_5
+  - first:
+      74: -4121565789610849069
+    second: Armature|Hand_L_FisT
+  - first:
+      74: -8835021065343892778
+    second: Armature|Hand_L_Point
+  - first:
+      74: -3431610362207715014
+    second: Armature|Hand_L_Relax
+  - first:
+      74: -7910007596376140430
+    second: Armature|Hand_L_Victory
+  - first:
+      74: -7756207547362580014
+    second: Armature|Hand_R_3
+  - first:
+      74: 3728715311629438825
+    second: Armature|Hand_R_4
+  - first:
+      74: 7004833360682837482
+    second: Armature|Hand_R_5
+  - first:
+      74: 4152695562215686448
+    second: Armature|Hand_R_FisT
+  - first:
+      74: -5374590106872480682
+    second: Armature|Hand_R_Point
+  - first:
+      74: -4930396777196613790
+    second: Armature|Hand_R_Relax
+  - first:
+      74: 6050189748613211574
+    second: Armature|Hand_R_Victory
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GozAk
+    second: {fileID: 2100000, guid: d79e71e1d1758464f91b0772fae6791f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Goz_Black
+    second: {fileID: 2100000, guid: 715331e54fe00f14fb6f01ae2ca5f675, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Goz_Cam
+    second: {fileID: 2100000, guid: d7c64ef5bfa52a04ba98fe2c0b1a31b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Goz_Renk
+    second: {fileID: 2100000, guid: 8920761e81d0f8240b6f884d30f3a2ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 11483810ed24e6b40a3828337060d71b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Saclar
+    second: {fileID: 2100000, guid: b5b412f47ebde8649a082fbff745a252, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: eab88f50125e4cc4f8f13f0c50746df1, type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
